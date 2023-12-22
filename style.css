@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Happy Monkey';
+}
+body {
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.container {
+  background: #333;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  width: 60%;
+  aspect-ratio: 2/1;
+  border-radius: 5px;
+}
+.container img {
+  max-height: 100%;
+  width: 50%;
+  border-radius: inherit;
+}
+.container .fact {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+.fact h1 {
+  color: #fff;
+  font-size: 2rem;
+}
+.fact p {
+  color: #ddd;
+  font-size: 1.4rem;
+  overflow-y: auto;
+  height: calc(100% - 180px);
+  padding-right: 5px;
+}
+.fact p::-webkit-scrollbar {
+  width: 5px;
+}
+.fact p::-webkit-scrollbar-track {
+  background: #222;
+}
+.fact p::-webkit-scrollbar-thumb {
+  background-color: #444;
+  outline: 1px solid #555;
+  border-radius: 5px;
+}
+.fact button {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #0aa;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 600;
+}
+.fact .src {
+  position: absolute;
+  bottom: 0;
+  color: #aaa;
+}
+a {
+  color: #0aa;
+}
+
+.skeleton {
+  animation: skeleton-loading 0.5s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+  0% {
+    background: #666;
+  }
+  100% {
+    background: #333;
+  }
+}
+@media (max-width:1020px) {
+  .container {
+    width: 80%;
+  }
+}
+@media (max-width:770px) {
+  .container {
+    flex-direction: column;
+    aspect-ratio: 2/1.5;
+    margin: 10px 0;
+  }
+  .container img {
+    width: 100%;
+  }
+  .container .fact {
+    width: 100%;
+    min-height: 300px;
+  }
+}
+@media (max-width:420px) {
+  .container {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+  }
+  .fact p {
+    height: calc(100% - 150px);
+  }
+}
+@media (max-width:325px) {
+  .fact p {
+    height: calc(100% - 200px);
+  }
+}
